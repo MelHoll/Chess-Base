@@ -1,0 +1,85 @@
+#viewport {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+chess-board {
+  display: grid;
+  background-color: #777;
+  /* Please keep the board this size */
+  width: 90vh;
+  height: 90vh;
+  grid-template-columns: 0.5fr repeat(8, 1fr);
+  grid-template-rows: 0.5fr repeat(8, 1fr) 0.5fr;
+}
+
+chess-board:nth-child(even){
+  background-color: blue;
+}
+
+chess-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+chess-space {
+  text-align: center;
+  font-size: xxx-large;
+  align-content: center;
+}
+
+@keyframes setupBoardBlack {
+  0%   { left:-100px; top:-100px;}
+  50%  { left:100px; top:100px; transform:rotate(360deg);}
+  100% { left:0px; top:0px;}
+}
+
+@keyframes setupBoardWhite {
+  0%   { left:100px; top:100px;}
+  50%  { left:-100px; top:-100px; transform:rotate(360deg);}
+  100% { left:0px; top:0px;}
+}
+
+@keyframes movePiece {
+  0%   { opacity: 0.5; top: -10px}
+  100% { opacity: 1; top: 0px }
+}
+
+chess-space div.movement {
+  animation-name: movePiece !important;
+  animation-duration: 1s !important;
+} 
+
+chess-space div {
+  position: relative;
+  animation-duration: 1.5s;
+} 
+
+chess-space .white{
+  color: white;
+  animation-name: setupBoardWhite;
+}
+
+chess-space .black{
+ color: black;
+ animation-name: setupBoardBlack;
+}
+
+.label {
+  background-color: #373737;
+  align-content: center;
+  text-align: center;
+}
+
+chess-space:not(.label) {
+  border: #4f4f4f 1px solid;
+}
+
+chess-space.even:nth-child(even) {
+  background-color: #4f4385;
+} 
+chess-space.odd:nth-child(even) {
+  background-color: #4f4385;
+}
