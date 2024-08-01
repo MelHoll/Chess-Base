@@ -27,7 +27,9 @@ At this time, I also added a warning for moving the pieces if they aren't able t
 ## Things I would do to improve
 
 - Restructure to have the chess spaces and labels be separate
-- Restructure to have the chess pieces sitting on top of the spaces to allow for nicer animations
+- Restructure to have the chess pieces sitting on top of the spaces to allow for nicer animations (also a separate class for piece)
 - Moved the event registration out of the render method into its own setup method for the board events
 - Had the pieces map based off constants instead of strings to prevent typos and ensure consistency
 - Add this project to the git repo right away so you could see a commit history instead of having to read through this (sorry I was excited to hop right in and this part became an afterthought)
+- Use svgs for the pieces instead of the unicode
+- Spend more time one the animation to make it more interesting than the simple animation I have currently
